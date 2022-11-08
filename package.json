@@ -1,0 +1,19 @@
+{
+  "name": "lumberjack",
+  "version": "0.0.1",
+  "description": "A minimalist logging module for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carbon16/lumberjack.git"
+  },
+  "author": "Carbon16",
+  "license": "GNU GPL v3",
+  "bugs": {
+    "url": "https://github.com/Carbon16/lumberjack/issues"
+  },
+  "homepage": "https://github.com/Carbon16/lumberjack#readme"
+}
