@@ -1,5 +1,7 @@
 "use strict";
 var fs = require('fs');
+//function to start express server
+
 
 function writeRiver(riverDir, message) {
     var path = riverDir +"/river.log"
@@ -210,6 +212,44 @@ class lumberjack {
         });
         writeRiver(this.dir, message);
     };
+    thicc(path = this.dir) {
+        //dump the whole object as json
+        var path = path + "/" + this.name + ".json"
+        fs.writeFile(path, JSON.stringify(this), function (err) {
+            if (err) throw err;
+        });
+    };
+    startServer(port = 3000) {
+        const express = require('express')
+        const app = express()
+        app.get('/', (req, res) => {
+            res.send(this)
+        });
+        app.get('/river', (req, res) => {
+            res.send(this.river)
+        });
+        app.get('/info', (req, res) => {
+            res.send(this.infoRiver)
+        });
+        app.get('/debug', (req, res) => {
+            res.send(this.debugRiver)
+        });
+        app.get('/warn', (req, res) => {
+            res.send(this.warnRiver)
+        });
+        app.get('/error', (req, res) => {
+            res.send(this.errorRiver)
+        });
+        app.get('/critical', (req, res) => {
+            res.send(this.criticalRiver)
+        });
+        app.get('/fatal', (req, res) => {
+            res.send(this.fatalRiver)
+        });
+        app.listen(port, () => {
+            console.log(`Listening @ http://localhost:${port}`)
+        });
+    }
 };
 
 exports.lumberjack = lumberjack;

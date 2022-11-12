@@ -18,4 +18,6 @@ try {
     console.error(err)
 } finally {
     console.log("!!TEST SUCESS!!")
+    lumber.thicc()
+    lumber.startServer()
 };
