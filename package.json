@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Carbon16/lumberjack#readme",
   "dependencies": {
-    "@carbon1617/lumberjack": "^1.1.2",
+    "@carbon1617/lumberjack": "^1.3.2",
     "express": "^4.18.2"
   }
 }
